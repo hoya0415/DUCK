@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.web.curation.model.mapper.TrendMapper">
+
+	<select id="searchFeedList" parameterType="String" resultType="Feed">
+		select feed_id, u.user_id, title, category, contents, u.nickname, like_cnt, upload_date,
+			(select file_url from file_info where feed_id = f.feed_id order by file_id asc limit 1) as url,
+			(select file_url from file_profile where user_id = u.user_id) as profile_url
+		from feed f
+		join user u
+		on f.user_id = u.user_id
+		where contents like '%${keyword}%' or title like '%${keyword}%'
+		order by upload_date desc;
+	</select>
+	
+	<select id="searchFeedListByCategory" parameterType="String" resultType="Feed">
+		select feed_id, u.user_id, title, category, contents, u.nickname, like_cnt, upload_date,
+			(select file_url from file_info where feed_id = f.feed_id order by file_id asc limit 1) as url,
+			(select file_url from file_profile where user_id = u.user_id) as profile_url
+		from feed f
+		join user u
+		on f.user_id = u.user_id
+		where category like '%${keyword}%' or title like '%${keyword}%'
+		order by upload_date desc;
+	</select>
+	
+	<select id="searchProfileList" parameterType="String" resultType="Profile">
+		select user_id, nickname, bio,
+			(select file_url from file_profile where user_id = u.user_id) as profile_url
+		from user u
+		where nickname like '%${keyword}%'
+		order by sign_up_date desc;
+	</select>
+	
+	<select id="searchLikeRanking" resultType="Feed">
+		select f.*, (select nickname from user where user_id = f.user_id) as nickname,
+			(select file_url from file_info where feed_id = f.feed_id order by file_id asc limit 1) as url,
+			(select file_url from file_profile where user_id = f.user_id) as profile_url
+		from feed f
+		left join feed_like fl
+		on f.feed_id = fl.feed_id
+		where fl.like_date > subdate(now(), interval 1 day)
+		group by f.feed_id, nickname, url, profile_url
+		order by count(fl.feed_id) desc
+		limit 20;
+	</select>
+
+</mapper>

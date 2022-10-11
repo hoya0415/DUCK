@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.web.curation.model.mapper.AlertInputMapper">
+
+	<insert id="alertInput" parameterType="Alert">
+		insert into alert(
+			feed_id, comment_id, sender_id, sender_nickname, target_id, type, alert_date
+		) values (
+			(case 
+				when (#{type} = "commentLike") then 
+					(select feed_id from comment where comment_id = #{commentId}) 
+				else #{feedId}
+	            end),
+			#{commentId}, #{senderId}, #{senderNickname}, #{targetId}, #{type}, #{alertDate}
+		);
+	</insert>
+	
+	<delete id="alertDelete" parameterType="Alert">
+		delete 
+		from alert
+		where type = #{type} and sender_id = #{senderId}
+		and target_id = #{targetId} and
+		(feed_id = #{feedId} or comment_id = #{commentId})
+	</delete>
+	
+</mapper>

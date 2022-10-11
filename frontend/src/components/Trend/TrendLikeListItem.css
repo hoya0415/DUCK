@@ -1,0 +1,187 @@
+/* 트렌드 리스트 외부 */
+.trend-list-container {
+  margin: 40px 0;
+  -ms-overflow-style: none; 
+}
+/* top-3 */
+.top-3 {
+  margin: 40px 0;
+  transition: transform 300ms ease;
+}
+.top-3-number {
+  color: #f8ab0b;
+  font-size: 55px;
+}
+.trend-category {
+  color: #f8ab0b;
+  text-align: left;
+  width: 58vw;
+  margin: auto;
+  cursor: pointer;
+}
+/* top-3 카드 */
+.top-3-container {
+  border-radius: 30px;
+  border: none;
+  max-height: 450px;
+  width: 65vw;
+  box-shadow: 2px 2px 15px rgba(84, 84, 84, 0.112);
+}
+/* .top-3-container:hover {
+  filter: brightness(50%);
+  transform: scale(1.1);
+} */
+.top-3:hover{
+  /* filter: brightness(50%); */
+  transform: scale(1.05);
+}
+.top-3-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 30px 30px 0 0;
+  cursor: pointer;
+}
+/* top-3 카드뱃지 */
+.css-144dnr3-MuiBadge-badge {
+  /* top: 0 !important; */
+  color: #fffcf4;
+  font-size: 22px !important;
+}
+#trend-heart {
+  width: 2.5em !important;
+  height: 2.5em !important;
+}
+/* top-3 text */
+.top-3-title {
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  color: #525252;
+  cursor: pointer;
+}
+.top-3-writer {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 25px;
+  color: #525252;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+/* top-10 컨테이너 */
+.top-10-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px 0;
+}
+.top-10-hov {
+  transition: transform 300ms ease;
+  
+}
+.top-10-hov:hover {
+  transform: scale(1.05);
+}
+.trend-like-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+}
+
+/* top-10 카드 */
+.trend-like-card {
+  width: 65vw;
+  height: 110px;
+  border-radius: 25px;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 2px 2px 15px rgba(84, 84, 84, 0.112);
+}
+/* top-10 숫자 */
+.top-10 {
+  color: #f8ab0b;
+  text-align: center;
+  margin: 10px !important;
+  padding: 0;
+  width: 35px !important;
+  font-size: 25px !important;
+}
+/* top-10 text */
+.trend-like-text {
+  padding: 15px 15px 15px 0;
+  color: #525252;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.trend-like-title {
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+/* top-10 작성자 정보 */
+.trend-like-card-info {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 13px;
+}
+
+.trend-like-user-info {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.trend-like-profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor:pointer;
+}
+
+.trend-writer-nickname {
+  margin: auto;
+  margin-left: 7px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  font-weight: 600;
+  cursor:pointer;
+}
+/* top-10 이미지 */
+.trend-like-img {
+  width: 19vw;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 20px 20px 0;
+  cursor:pointer;
+}
+/* top-10 뱃지 */
+/* #top-3-trend-heart {
+  width: 1.6em !important;
+  height: 1.6em !important;
+  
+} */
+#top-3-like-sum-badge > .css-181qnpz-MuiBadge-badge {
+  color: #fffcf4;
+  font-size: 15px !important;
+  left: 4% !important;
+}
+.css-181qnpz-MuiBadge-badge {
+  left: 4% !important;
+}
+

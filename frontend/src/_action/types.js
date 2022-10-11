@@ -1,0 +1,20 @@
+export const LOGIN_USER = 'login_user';
+export const SIGNUP_USER = 'signup_user';
+export const WITHDRAWAL_USER = 'withdrawal_user';
+export const GET_USER_PROFILE = 'get_user_profile';
+export const LOGOUT_USER = 'logout_user';
+export const GET_FEED_LIST = 'get_feed_list';
+export const GET_FEED_DETAIL = 'get_feed_detail';
+export const CREATE_FEED = 'create_feed';
+export const EDIT_FEED = 'edit_feed';
+export const EDIT_PROFILE = 'edit_profile';
+export const GET_FOLLOWER_LIST = 'get_follower_list';
+export const GET_FOLLOWING_LIST = 'get_following_list';
+export const FEED_LIKE = 'feed_like';
+export const GET_ALERT = 'get_alert';
+export const FEED_UN_LIKE = 'feed_un_like';
+export const TREND_LIKE_LIST = 'trend_like_list';
+export const CREATE_CHAT = 'create_chat';
+export const GET_CHAT_LIST = 'get_chat_list';
+export const GET_CATEGORY_SEARCH = 'get_category_search';
+

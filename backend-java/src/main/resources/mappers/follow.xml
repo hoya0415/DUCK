@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.web.curation.model.mapper.FollowMapper">
+	<select id="getFollowingList" parameterType="Follow" resultType="FollowReturn">
+		select f.follow_id, u.user_id, u.nickname,
+			(select file_url from file_profile where user_id = u.user_id) as profile_url
+		from follow as f
+		left join user as u
+		on f.to_user_id = u.user_id
+		where f.from_user_id = #{fromUserId}
+	</select>
+	
+	<select id="getFollowerList" parameterType="Follow" resultType="FollowReturn">
+		select f.follow_id, u.user_id, u.nickname,
+			(select file_url from file_profile where user_id = u.user_id) as profile_url
+		from follow as f
+		left join user as u
+		on f.from_user_id = u.user_id
+		where f.to_user_id = #{toUserId}
+	</select>
+	
+	<insert id="addFollow" parameterType="Follow">
+		insert into follow(
+			from_user_id, to_user_id
+		) values (
+			#{fromUserId}, #{toUserId}
+		)
+	</insert>
+	
+	<update id="confirmFollow" parameterType="Follow">
+		update follow
+		   set checked = #{checked}
+		 where follow_id = #{followId}
+	</update>
+
+	<delete id="deleteFollow" parameterType="integer">
+		delete 
+		  from follow
+		 where from_user_id = #{fromUserId} and to_user_id = #{toUserId}
+	</delete>
+	
+	<select id="getIsFollowed" parameterType="integer" resultType="integer">
+		select count(*)
+		from follow
+		where from_user_id = #{fromUserId} and to_user_id = #{toUserId}
+	</select>
+	
+</mapper>

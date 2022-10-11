@@ -1,0 +1,225 @@
+// Cover, Signup, Login, Welcome
+
+// =========================== cover //
+.logo-fld-cv {
+  margin: auto;
+  position: absolute;
+  top: 20%;
+  left: 0;
+}
+.float-duck-img-cv {
+  width: 53%;
+}
+.logo-img-cv {
+  display: block;
+  width: 55%;
+  margin: 20px auto;
+}
+.dom-logo-img-cv {
+  display: block;
+  margin: 20px auto;
+  width: 40%;
+}
+
+// =========================== login, signup //
+
+#Login {
+  position: absolute;
+  top: 15%;
+  left: 0;
+}
+
+#Signup {
+  position: absolute;
+  top: 15%;
+  left: 0;
+}
+
+// 메인 로고 //
+.logo-fld {
+  margin: 50px auto 80px auto;
+}
+.float-duck-img {
+  width: 38%;
+}
+.logo-img {
+  display: block;
+  width: 40%;
+  margin: 20px auto;
+}
+.dom-logo-img {
+  display: block;
+  margin: 20px auto;
+  width: 25%;
+}
+
+// border color //
+.input-fld .MuiOutlinedInput-notchedOutline  {
+  border: 1.5px solid $orange50 !important ;
+  border-radius: 12px !important;
+  margin: 0 !important;
+}
+// input box 상단 이메일 글자 색 변경 //
+.input-fld .MuiInputLabel-outlined.Mui-focused {
+  color: $orange !important;
+}
+
+// account input fld //
+.account-fld {
+  margin: 20px auto;
+}
+.input-fld {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60vw;
+}
+// input color //
+#input-email {
+  color: $grey50;
+  font-size: 15px;
+  position: static;
+  vertical-align: middle;
+  padding-right: 25%;
+}
+.input-fld .MuiTextField-root {
+  width: 100% !important;
+}
+#input-email-label {
+  font-size: 13px;
+  color: $grey50;
+  height: auto;
+  font-weight: 600;
+  line-height: 2;
+}
+#input-pw {
+  color: $grey50;
+}
+#input-pw-label {
+  font-size: 13px;
+  color: $grey50;
+  font-weight: 600;
+  line-height: 2;
+}
+#input-pw-confirm {
+  color: $grey50;
+}
+#input-pw-confirm-label {
+  font-size: 13px;
+  color: $grey50;
+  font-weight: 600;
+  line-height: 2;
+}
+
+#check-btn {
+  color: $grey30;
+  border: 1.3px solid $grey30;
+  border-radius: 15px;
+  padding: 5px 8px;
+  margin: auto;
+}
+#check-btn:hover {
+  color: $orange;
+  border-color: $orange50;
+  background-color: $back;
+}
+.parent .check-icon {
+  color: $green;
+}
+.check-txt {
+  line-height: 1.2;
+  font-size: 11px;
+  font-weight: 400;
+}
+.parent {
+  position: relative;
+  width: 100%;
+  margin-right: 20px;
+}
+.child {
+  position: absolute !important;
+  top: 22.685px;
+  right: 20px;
+}
+
+// 로그인 버튼, 회원가입 버튼 //
+.submit-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 12px !important;
+  margin: 20px auto 0 auto !important;
+  font-size: 15px !important;
+  display: block !important;
+  font-weight: 800 !important;
+}
+
+// 로그인 페이지로 이동, 회원가입 페이지로 이동 //
+.move-to-fld {
+  padding: 30px 0 10px 0;
+}
+.move-to-fld > span {
+  color: $grey30;
+  font-size: 14px;
+}
+.move-to {
+  color: $orange;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+// =========================== welcome //
+
+.welcome-bg img {
+  width: 250%;
+  transform: scaleX(-1);
+  position: relative;
+  z-index: -1;
+}
+.text-fld {
+  margin: 23vh auto;
+}
+
+.float-duck-img-wc {
+  margin-top: 50px;
+  width: 240px;
+  position: absolute;
+  
+}
+.hello {
+  margin: 20% 0;
+  font-weight: bold;
+  color: $grey80;
+}
+.hello-txt {
+  color: $grey50;
+  margin: 4rem 0;
+}
+.hello-txt h4 {
+  line-height: 2em;
+}
+.boss-duck {
+  transition: transform 300ms ease !important;
+  width: 30%;
+  cursor: pointer;
+}
+.boss-duck:hover {
+  transform: scale(1.2) !important;
+}
+
+.welcome-profile {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 300ms ease !important;
+}
+.welcome-profile:hover {
+  transform: scale(1.2) !important;
+}
+.welcome-nick {
+  padding: 10px;
+  line-height: 2rem;
+  color: $grey50;
+}

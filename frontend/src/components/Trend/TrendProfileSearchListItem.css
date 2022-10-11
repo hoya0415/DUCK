@@ -1,0 +1,7 @@
+.trend-profile-result {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 15px 20px;
+  cursor: pointer;
+}

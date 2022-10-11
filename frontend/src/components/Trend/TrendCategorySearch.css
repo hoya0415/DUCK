@@ -1,0 +1,16 @@
+.cs-white-back{
+  padding-top: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #fffcf4;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 10px 10px 30px rgb(84, 84, 84);
+  height: 100vh;
+}
+
+
+#cs-tag{
+  margin-bottom: 5vh;
+  font-size: 30px;
+  color: #f8ab0b;
+}

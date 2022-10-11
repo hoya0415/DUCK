@@ -1,0 +1,11 @@
+.alarm-text{
+  color: #7a7a7a;
+  display: flex;
+  margin-left: 10vw;
+  margin-top: 20px;
+}
+
+#true-text{
+  color: #F8AB0B;
+  margin-left: 20px;
+}

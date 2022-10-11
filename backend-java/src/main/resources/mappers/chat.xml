@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.web.curation.model.mapper.ChatMapper">
+
+	<insert id="create" parameterType="Chat">
+		insert into chat (
+			user_id, chat_title, chat_contents, video_url
+		) values (
+			#{userId}, #{chatTitle}, #{chatContents}, #{videoUrl}
+		)
+		<selectKey resultType="int" keyProperty="chatId" order="AFTER">
+			select last_insert_id()
+		</selectKey>
+	</insert>
+	
+	<insert id="writeFile" parameterType="Chat">
+		insert into file_chat (chat_id, file_url, file_name)
+		values (#{chatId}, #{fileInfo.url}, #{fileInfo.fileName})
+	</insert>
+	
+	<select id="list" resultType="Chat">
+		select c.chat_id, c.user_id, chat_title, chat_contents, create_date, video_url,
+			(select file_url from file_profile where user_id = c.user_id) as profile_url,
+			(select file_url from file_chat where chat_id = c.chat_id) as thumb_url,
+			(select nickname from user where user_id = c.user_id) as userNickname
+		from chat c
+		where c.create_date > subdate(now(), interval 1 day)
+		order by create_date desc;
+	</select>
+	
+	<select id="searchChatList" parameterType="String" resultType="Chat">
+		select c.chat_id, c.user_id, chat_title, chat_contents, create_date, video_url,
+			(select file_url from file_profile where user_id = c.user_id) as profile_url,
+			(select file_url from file_chat where chat_id = c.chat_id) as thumb_url,
+			(select nickname from user where user_id = c.user_id) as userNickname
+		from chat c
+		where chat_title like '%${keyword}%'
+		order by create_date desc;
+	</select>
+	
+	<select id="getExpiredChatId" resultType="integer">
+		select chat_id
+		from chat
+		where create_date <![CDATA[ < ]]> subdate(now(), interval 1 day)
+	</select>
+	
+	<delete id="delete" parameterType="integer">
+		delete 
+		from chat
+		where chat_id = #{chatId}
+	</delete>
+	
+	<delete id="deleteChatFile" parameterType="integer">
+		delete 
+		from file_chat 
+		where chat_id = #{chatId}
+	</delete>
+	
+	<select id="getFileName" parameterType="int" resultType="String">
+		select file_name 
+		from file_chat 
+		where chat_id = #{chatId}
+	</select>
+	
+	<select id="messageList" resultType="Message">
+		select *,
+			(select file_url from file_profile where user_id = m.user_id) as profile_url,
+			(select nickname from user where user_id = m.user_id) as nickname
+		from message m
+		order by send_time desc;
+	</select>
+	
+	<insert id="sendMessage" parameterType="Message">
+		insert into message (chat_id, user_id, contents, send_time)
+		values (#{chatId}, #{userId}, #{contents}, #{sendTime})
+	</insert>
+	
+	<insert id="log" parameterType="Log">
+		insert into chat_log (chat_id, user_id)
+		values (#{chatId}, (select user_id from user where email = #{email}))
+	</insert>
+	
+</mapper>

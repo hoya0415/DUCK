@@ -1,0 +1,57 @@
+.profile-update-input {
+  margin: 25px auto 5px auto !important;
+}
+
+#outlined-multiline-static-label {
+  color: #787878;
+  font-size: 13px;
+}
+
+.css-1sqnrkk-MuiInputBase-input-MuiOutlinedInput-input {
+  color: #787878 !important;
+}
+#top-bar-fld-check{
+  width: 64px;
+  height: 35px !important;
+}
+.profile-edit-ducks {
+  position: absolute;
+  top: 210px;
+  width: 100vw;
+}
+.FileInput-hidden-overlay {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 99;
+}
+.FileInput-hidden{
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.FileInput-clear-button {
+  border: none;
+  background: none;
+  z-index: 999;
+}
+
+
+#checkiconbg{
+  /* color: #016d0a !important; 
+  height: 0.9em !important; */
+}
+.profile-child {
+  position: absolute !important;
+  top: 47%;
+  right: 4%;
+}

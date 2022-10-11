@@ -1,0 +1,32 @@
+.trend-profile-result-followBtn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 400px;
+}
+
+.trend-profile-result-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.trend-profile-nickname-bio-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 10px;
+  text-align: left;
+}
+
+.trend-profile-result-profileImg {
+  border: none;
+}
+
+.trend-profile-result-bio {
+  color: #A1A0A0;
+  font-size: 13px;
+}

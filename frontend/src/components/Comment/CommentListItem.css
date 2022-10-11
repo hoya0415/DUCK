@@ -1,0 +1,128 @@
+.comment-list-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px auto;
+  width: 90%;
+}
+
+.comment-hide-del-container {
+  display: flex;
+  align-items: center;
+  background-color: rgb(120, 120, 120, 0.8);
+  font-size: 23px;
+  color: #fffcf4;
+  width: 416px;
+  height: 100%;
+  cursor: pointer;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-even {
+  justify-content: space-evenly !important;
+}
+
+.edit-btn {
+  /* padding: 15px; */
+  font-size: 25px;
+}
+.css-tzssek-MuiSvgIcon-root {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.content-nickname-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 10px;
+  margin-right: 0;
+  width: 100%;
+}
+
+.hidden-comment {
+  margin: 0px;
+  margin-left: 65px;
+  font-size: 15px;
+  color: #7d7d7d;
+  height: 40px;
+  padding: 10px 0px;
+}
+
+.comment-content {
+  font-size: 15px;
+  color: #7d7d7d;
+  text-align: start;
+}
+
+.comment-nickname {
+  font-size: 13px;
+}
+
+.comment-date {
+  font-size: 11px;
+  width: 100%;
+  text-align: end;
+}
+
+.click-hide {
+  opacity: 0;
+  display: none;
+}
+
+.click-visible {
+  opacity: 1;
+}
+
+.parent-div-position {
+  position: relative;
+}
+
+.child-div-position {
+  position: absolute;
+}
+
+.container-flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.toggle-controll-btn {
+  color: #7a7a7a !important;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.like-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 10px;
+  margin-right: 10px;
+}
+
+.like-setting-container {
+  display: flex;
+  align-items: center;
+}
+
+.like-btn-center {
+  text-align: center;
+}
+
+#comment-like-btn {
+  color: #dc3545 !important;
+  height: 25px !important;
+  width: 25px !important;
+  margin: 0;
+  transition: transform 300ms ease;
+  cursor: pointer;
+}
+
+#comment-like-btn:hover {
+  transform: scale(1.2) !important;
+}

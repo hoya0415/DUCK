@@ -1,0 +1,58 @@
+.bottom-nav-container {
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  width: 100vw;
+}
+.bottom-nav {
+  opacity: 0.9;
+  width: 100%;
+  background-color: #fffcf4 !important;
+  height: 70px !important;
+  display: flex;
+  justify-content: space-between;
+}
+
+.css-b6y1q4-MuiButtonBase-root-MuiBottomNavigationAction-root {
+  padding: 16px 0px 8px 0px !important;
+  min-width: 50px !important;
+  /* max-width: 90px !important; */
+}
+.css-1ee5err-MuiButtonBase-root-MuiBottomNavigationAction-root {
+  min-width: 50px !important;
+  /* max-width: 90px !important; */
+}
+.bottom-icon {
+  width: auto;
+  height: 30px;
+  color: #c4c4c4 !important;
+  -webkit-filter: opacity(0.5) drop-shadow(0 0 0 #b1b1b1) !important;
+  transition: transform 300ms ease;
+}
+.bottom-icon:hover {
+  transform: scale(1.2);
+}
+.Mui-selected img {
+  -webkit-filter: opacity(0.7) drop-shadow(0 0 0 #88661a) !important;
+}
+
+.feedduck {
+  width: 40px !important;
+  height: 40px !important;
+}
+.MuiBottomNavigationAction-label {
+  color: #f8ab0b;
+}
+.pofile-img-fld-bott-nav {
+  z-index: 1000;
+  position: relative;
+  bottom: 1.5em;
+  transition: transform 300ms ease;
+}
+.pofile-img-fld-bott-nav > * {
+  opacity: 1 !important;
+
+}
+.pofile-img-fld-bott-nav:hover {
+  transform: scale(1.1);
+}

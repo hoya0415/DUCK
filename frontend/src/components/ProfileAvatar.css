@@ -1,0 +1,21 @@
+/* 프로필 있는 유저 */
+.profile-img {
+  border-radius: 100px;
+  border: 3px solid #fffcf4;
+  background-color: #fffcf4;
+  box-shadow: 2px 2px 15px rgba(84, 84, 84, 0.112);
+}
+
+/* 프로필 없는 유저 */
+.css-10mi8st-MuiSvgIcon-root-MuiAvatar-fallback {
+  background-image: url('../assets/기본프로필.png');
+  background-color: #fffcf4;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-clip: content-box;
+  width: 100% !important;
+  height: 100% !important;
+  fill: transparent !important;
+  border: 3px solid #fffcf4;
+  border-radius: 100px;
+}

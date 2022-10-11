@@ -1,0 +1,68 @@
+$back: #fffcf4;
+$back-grey: #e8e5de;
+$orange: #f8ab0b;
+$orange50: rgba(248, 171, 11, 0.5);
+$grey80: #575757;
+$grey50: #787878;
+$grey30: #a1a0a0;
+$red: #cd2a30;
+$green: #016d0a;
+$grad-back: linear-gradient(to right, rgb(248, 111, 11), rgb(248, 171, 11));
+$grad-back-b: linear-gradient(to top, #000000b6, transparent, transparent);
+
+* {
+  font-family: 'GmarketSansMedium' !important;
+}
+p {
+  margin-bottom: 0;
+}
+.css-1ss2ei0-MuiContainer-root {
+  padding: 0 !important;
+}
+#root {
+  height: 100%;
+}
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover {
+  background: transparent !important;
+}
+.MuiBox-root {
+  margin: 20px 0;
+}
+/* 에러 메시지 */
+.err-msg {
+  font-size: 0.8rem;
+  color: $red;
+  text-align: right;
+  width: 95%;
+}
+/* 카드 배경 틀 */
+.grade-back {
+  background: $grad-back !important;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* height: 100%; */
+}
+.top-fld {
+  margin: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+}
+.white-back {
+  padding: 100px 30px;
+  background-color: $back;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 10px 10px 30px rgb(84, 84, 84);
+  height: 100%;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@import './Account';
+@import './Profile';
+@import './Feed';

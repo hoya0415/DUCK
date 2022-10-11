@@ -1,0 +1,576 @@
+// Feed, FeedList, FeedListItem, FeedDetail, FeedCreate, FeedUpdate
+
+// =========================== Feed(story, category) //
+
+#feed-story {
+  white-space: nowrap;
+  overflow: auto;
+  display: flex;
+  justify-content: flex-start;
+  margin: 2vh 10vw;
+}
+.story-card {
+  margin-right: 10px;
+  width: 20vw;
+  height: 15vh;
+  border-radius: 20px !important;
+  cursor: pointer;
+}
+.story-img {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category-btn {
+  color: $orange !important;
+  border: 1.5px solid $orange !important;
+  border-radius: 30px;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0 5px;
+  padding: 6px 8px;
+  transition: transform 300ms ease !important;
+}
+.category-btn-checked:hover {
+  transform: scale(1.1) !important;
+}
+.category-btn-checked {
+  color: $back !important;
+  border-radius: 25px;
+  background: $orange !important;
+  border: 1px solid $orange !important;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0 5px;
+  padding: 6px 8px;
+  transition: transform 300ms ease !important;
+}
+
+.category-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 80vw;
+  height: 70px;
+  margin: 20px auto;
+  white-space: nowrap;
+  overflow: scroll;
+}
+
+// =========================== FeedList //
+.feed-list {
+  padding: 0 0 90px 0;
+}
+/* 피드 사진(카드) */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  li {
+    list-style: none;
+    transition: transform 300ms ease;
+  }
+  li:hover {
+    transform: scale(1.05) !important;
+  }
+}
+
+// =========================== FeedListItem //
+
+.card-img {
+  width: 80vw;
+  height: 100%;
+}
+.MuiCardContent-root {
+  padding: 0 !important;
+}
+.card-container .MuiPaper-elevation {
+  margin: 10px;
+  border-radius: 30px !important;
+  box-shadow: 5px 5px 15px rgba(84, 84, 84, 0.359);
+}
+@media (min-width: 576px) {
+  .card-img {
+    max-width: 500px;
+    height: 100%;
+  }
+}
+
+/* 피드 타이틀, 내용 */
+.feed-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  color: $back;
+  z-index: 999;
+  text-align: left;
+  background: $grad-back-b;
+}
+.feed-title {
+  position: relative;
+  top: 70%;
+  left: 6%;
+  width: 70%;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.feed-content {
+  position: relative;
+  top: 71%;
+  left: 6%;
+  width: 70%;
+  font-size: 13px !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2em !important;
+  height: 2.4em;
+}
+/* 피드 작성자 */
+.feed-user-fld {
+  z-index: 999;
+  text-align: right;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.feed-user {
+  font-size: 13px !important;
+  color: $back;
+  margin: 5px !important;
+}
+
+/* 피드 바텀 */
+.feed-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 20px 35px 20px;
+}
+#like-btn {
+  color: $red !important;
+  height: 1.3em !important;
+  width: 1.3em !important;
+  margin-right: 5px;
+  transition: transform 300ms ease;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.2) !important;
+  }
+}
+.feed-tag {
+  cursor: pointer;
+  color: $orange;
+  text-align: right;
+  margin: 5px 20px;
+}
+
+/* 피드 작성 버튼 */
+.fab-add-container {
+  position: fixed;
+  z-index: 999;
+  bottom: 7em;
+  right: 2.3em;
+}
+
+.fab-add {
+  background: $grad-back !important;
+  transition: transform 300ms ease !important;
+  &:hover {
+    transform: scale(1.2);
+  }
+  .MuiSvgIcon-root {
+    color: $back !important;
+  }
+}
+
+// =========================== FeedDetail //
+
+/* 메뉴 있는 상단 바 */
+.top-bar-fld-feed {
+  background: linear-gradient(to bottom, #0000007b, transparent);
+  padding: 15px;
+  z-index: 998;
+  width: 100%;
+  position: absolute;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  svg {
+    background-color: none !important;
+  }
+}
+.top-bar-back-btn {
+  color: #fffcf4a8;
+  z-index: 999;
+  transition: transform 300ms ease !important;
+  &:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    background-color: none !important;
+  }
+}
+
+.top-bar-menu-btn {
+  color: #fffcf4a8;
+  z-index: 999;
+  transition: transform 300ms ease !important;
+  &:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    background-color: none !important;
+  }
+}
+.btn:focus {
+  box-shadow: none !important;
+}
+
+/* 수정, 삭제 버튼*/
+#feed-setting {
+  position: absolute;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100px;
+  top: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.feed-setting-btn {
+  cursor: pointer;
+  color: $back;
+  font-size: 18px;
+  padding: 10px 80px;
+  transition: 300ms;
+  &:hover {
+    transform: scale(1.1);
+    color: $orange;
+  }
+}
+#feed-setting-partition {
+  width: 1.4px;
+  height: 50px;
+  background-color: $back;
+  margin: 15px;
+}
+.fade:not(.show) {
+  display: none !important;
+}
+
+/* 사진 캐러셀 */
+#carousel-fld {
+  .carousel-inner {
+    width: 100vw;
+    height: 480px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 15px rgba(84, 84, 84, 0.42);
+  }
+  .carousel-item {
+    width: 100vw;
+    height: 480px;
+    overflow: hidden;
+  }
+}
+.carousel-item img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+}
+.isOneImg {
+  .carousel-control-prev {
+    display: none;
+  }
+  .carousel-control-next {
+    display: none;
+  }
+}
+
+/* 모달 사진 캐러셀 */
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #0000008c;
+}
+.modal-dialog {
+  margin: 0;
+}
+.modal-carousel .carousel-indicators {
+  display: none;
+}
+.modal-90w {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 576px) {
+  .modal-dialog {
+    width: 100vw !important;
+    max-width: none !important;
+  }
+  .modal-dialog-centered {
+    min-height: none !important;
+  }
+}
+.modal-body {
+  padding: 0;
+}
+.modal-90w .modal-content {
+  border: none;
+  background: transparent;
+  // X 아이콘
+  .MuiSvgIcon-root {
+    color: $back;
+    position: fixed;
+    right: 0;
+    cursor: pointer;
+    z-index: 999;
+    margin: 10px;
+  }
+  .MuiSvgIcon-root:hover {
+    color: $grey80;
+  }
+}
+
+/* 프로필 */
+.pofile-img-fld-feed {
+  width: 100vw;
+  position: absolute;
+  top: 460px;
+  left: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: self-end;
+}
+.profile-img-feed {
+  margin: 10px;
+  border-radius: 100px;
+  border: 1px solid $back;
+  background-color: $back;
+  box-shadow: 5px 5px 15px rgba(84, 84, 84, 0.16);
+  cursor: pointer;
+}
+.profile-txt {
+  font-weight: 600;
+  margin: 8px 10px;
+  cursor: pointer;
+  color: $grey80;
+}
+
+/* 좋아요 등 버튼 */
+.like-fld {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 30px;
+}
+
+/* 제목, 내용 text 필드 */
+.feed-detail-text-fld {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+}
+.feed-detail-top-fld {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.feed-detail-category {
+  color: #f8ad0bd2;
+  font-size: 16px;
+  cursor: pointer;
+}
+.feed-detail-title {
+  font-size: 21px;
+  text-align: start;
+  color: $grey80;
+  font-weight: 600;
+}
+.feed-detail-contents {
+  margin-top: 15px;
+  font-size: 16px;
+  text-align: start;
+  color: $grey50;
+}
+.feed-detail-ULDate {
+  color: $grey30;
+  font-size: 14px;
+}
+/* 댓글 */
+.comment-box {
+  background-color: $back-grey;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  margin-bottom: 0;
+}
+
+// =========================== FeedCreate //
+.feed-update-back {
+  height: 100vh;
+}
+
+.img-input-fld {
+  border: 1.5px solid $orange50;
+  border-radius: 15px;
+  width: 60vw;
+  height: 220px;
+  overflow: hidden;
+  &:hover .feed-input-img {
+    filter: brightness(50%);
+  }
+  .MuiBadge-anchorOriginTopRightCircular {
+    top: 20% !important;
+  }
+}
+
+#delete-photo-icon {
+  transform: translate(-50%, -50%);
+  color: $back;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  .MuiSvgIcon-root {
+    &:hover #img-add-card {
+      filter: brightness(80%) !important;
+    }
+  }
+}
+
+.feed-input-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feed-input-none {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.add-photo-icon {
+  color: $orange50 !important;
+  width: 1.6em !important;
+  height: 1.6em !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-input-fld {
+  margin-bottom: 10px;
+  &:hover .add-photo-icon {
+    color: $orange !important;
+  }
+}
+
+.input-fld {
+  .MuiFormControl-root,
+  .text-input {
+    width: 100% !important;
+  }
+  .MuiTextField-root {
+    margin-left: 0 !important;
+  }
+}
+
+#input-contents {
+  color: $grey50;
+  font-size: 13px;
+}
+
+.complete-button {
+  cursor: pointer;
+}
+
+.text-input {
+  display: flex;
+  flex-direction: column;
+}
+
+#img-add {
+  background: none;
+  box-shadow: none;
+  border: 1.5px solid $orange50;
+  border-radius: 25px;
+  margin: 10px 15px 10px 0;
+}
+
+#img-add-list {
+  border-radius: 15px;
+  position: relative;
+  .MuiPaper-elevation {
+    border-radius: 25px;
+  }
+}
+
+#img-add-card {
+  margin: 10px 15px 10px 0;
+  background: none;
+  box-shadow: none;
+  border: 1.5px solid $orange50;
+  &:hover {
+    filter: brightness(80%);
+  }
+  .MuiCardMedia-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+#img-add-delete {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  cursor: pointer;
+}
+
+#img-add-container {
+  width: 60vw;
+  white-space: nowrap;
+  overflow: auto;
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px auto;
+}
+
+// =========================== FeedUpdate //
+
+#img-update-container {
+  white-space: nowrap;
+  overflow: auto;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 40px;
+}

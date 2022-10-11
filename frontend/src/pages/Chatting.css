@@ -1,0 +1,27 @@
+#order-border {
+  border: 0 !important;
+}
+.chat-main-container {
+  width: 100vw;
+  padding: 0 50px 90px 50px;
+  margin: 0 auto;
+}
+
+#dropdown-btn {
+  background-color: none !important;
+  color: #a0a0a0;
+  text-align: end;
+}
+.dropdown-item.active {
+  color: #fffcf4;
+  text-decoration: none;
+  background-color: #f8ab0b;
+}
+.dropdown-item {
+  color: #f8ab0b;
+}
+.dropdown-item:hover {
+  color: #f8ab0b;
+  background-color: #fffaf0;
+}
+

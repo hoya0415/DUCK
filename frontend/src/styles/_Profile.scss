@@ -1,0 +1,315 @@
+// Profile, ProfileFeedList
+// ProfileSideBar, FollowList
+
+// =========================== Profile //
+
+/* 뒤로가기, 햄버거 있는 필드 */
+.top-bar-fld-profile {
+  margin: 20px 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 999;
+  height: 49px !important;
+}
+.top-bar-button {
+  color: $back;
+}
+.top-bar-disable {
+  display: none;
+}
+
+/* 흘러가는 오리  */
+.float-duck-img-pro-1 {
+  width: 240px;
+  max-height: 53.75px;
+  position: absolute;
+  top: 80px;
+  left: -0;
+}
+.float-duck-img-pro-2 {
+  width: 240px;
+  max-height: 53.75px;
+  position: absolute;
+  top: 80px;
+  right: 0;
+}
+/* 프로필 이미지 필드 */
+.profile-fld {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+#like-sum-badge .MuiBadge-badge {
+  color: $back;
+  font-weight: 700;
+  font-size: 17px;
+  left: 14% !important;
+  .MuiSvgIcon-root {
+    width: 1.8em;
+    height: 1.8em;
+  }
+}
+/* 프로필 정보 필드 */
+.profile-info-fld {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 40px;
+  margin-top: 10px;
+  height: 57px;
+}
+.profile-info-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dday {
+  font-size: 13px;
+  color: $grey30;
+}
+.profile-flw-btn {
+  margin: auto;
+}
+.container .MuiButton-linkPrimary:hover {
+  background: none !important;
+}
+.container {
+  .MuiButton-linkPrimary {
+    &:hover {
+      background: none !important;
+    }
+  }
+}
+
+/* 팔로우 탭 */
+
+.MuiTabs-flexContainer {
+  justify-content: center;
+  .MuiTab-textColorPrimary.Mui-selected {
+    color: $orange;
+  }
+  .tabpanel0.Mui-selected,
+  .tabpanel0 {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    padding: 0;
+    min-width: 0;
+  }
+}
+.MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: $orange !important;
+}
+.MuiTabs-indicator {
+  background-color: $orange !important;
+}
+.MuiTabPanel-root {
+  position: absolute;
+  background-color: $back;
+  width: 100%;
+  left: 0;
+  right: 0;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 10px 40px 30px rgba(84, 84, 84, 0.468);
+  z-index: 2;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#tabpanel0 {
+  opacity: 0;
+  width: 0 !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+}
+
+/* 모달 */
+.modal-dialog {
+  margin: 0;
+  width: 100vw;
+}
+
+// =========================== ProfileFeedList //
+
+.profile-feed-card-container {
+  white-space: nowrap;
+  overflow: auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.list-name {
+  font-size: 15px;
+  color: $grey80;
+  cursor: pointer;
+}
+.list-name:hover {
+  font-weight: 700;
+  color: $orange;
+}
+#plusbtn {
+  z-index: 1;
+}
+.arrowbtn {
+  justify-content: center;
+}
+
+#profile-feed-list-card {
+  cursor: pointer;
+  border-radius: 25px !important;
+  margin: 10px;
+  display: inline-block;
+}
+
+// 게시물 디테일 페이지
+
+.MuiImageList-woven {
+  gap: 15px !important;
+  margin: 20px 0;
+}
+.MuiImageListItem-img {
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 20px !important;
+}
+
+// =========================== ProfileSideBar //
+
+.side-bar-btn {
+  color: $orange;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.profile-logout-button {
+  color: $orange !important;
+  margin: 5px;
+}
+
+.side-bar-text {
+  height: 60%;
+  color: $orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.css-1ss2ei0-MuiContainer-root {
+  height: 100%;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: transparent;
+  border-color: transparent;
+  &:hover {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
+
+.offcanvas {
+  width: 330px;
+  background-color: rgba(255, 252, 244, 0.9);
+  border-color: rgba(255, 252, 244, 0.9);
+  border-radius: 25px 0px 0px 25px;
+}
+
+.side-bar-float-duck-img-1 {
+  width: 240px;
+  max-height: 53.75px;
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+}
+
+.side-bar-float-duck-img-2 {
+  width: 240px;
+  max-height: 53.75px;
+  position: absolute;
+  bottom: 80px;
+  left: 240px;
+}
+
+.link {
+  text-decoration: none;
+  color: $orange;
+}
+
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: 0 0 0 0.25rem rgba(255, 252, 244, 0.5);
+}
+
+.withdrawal-modal {
+  width: 200px;
+  margin: auto;
+}
+
+.modal-content {
+  border-radius: 15px;
+  background-color: $back;
+  color: $orange;
+}
+
+.withdrawalBtn {
+  border-radius: 10px;
+  background-color: $orange;
+  color: $back;
+}
+
+// =========================== FollowList //
+
+#follow-list-container {
+  display: flex;
+  justify-content: space-around;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+#follow-list-img-nickname {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: auto 20px auto 10px;
+  cursor: pointer;
+  margin: auto 0;
+  font-size: 15px;
+  text-align: start;
+  color: #00000099;
+}
+
+#follow-list-loguser {
+  height: 60px;
+  width: 90.99px;
+}
+.fllow-btn {
+  border-radius: 12px;
+  padding: 3px 10px;
+  font-size: 13px;
+  font-weight: 400;
+  min-width: 75px;
+  max-width: 75px;
+}
+
+.uflw-btn {
+  color: $back;
+  background-color: $orange;
+  border: 1px solid $orange;
+}
+.flw-btn {
+  color: $orange;
+  border: 1px solid $orange;
+}

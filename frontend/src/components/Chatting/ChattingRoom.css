@@ -1,0 +1,243 @@
+/* Small devices (tablets, 768px and up) */
+.chat-info-fix {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  background-color: #fffcf4;
+  z-index: 100;
+}
+.chat-back {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+}
+
+/* 인원수 이미지 */
+.groupimg {
+  width: 6vw;
+  margin: 3px;
+}
+
+.chat-top-bar-participant {
+  width: 13vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.chat-top-bar-fld {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 0;
+}
+
+.chat-top-bar-back {
+  width: 5vw;
+}
+
+.arrowBtn {
+  color: #484848;
+}
+
+.chat-top-bar-time {
+  width: 60vw;
+  font-size: 25px;
+  /* background: linear-gradient(
+    to right,
+    rgba(248, 110, 11, 0.9),
+    rgb(248, 171, 11)
+  ); */
+  color: #f8ab0b;
+  -webkit-background-clip: text;
+  /* -webkit-text-fill-color: transparent; */
+  /* font-weight: bolder; */
+
+}
+.timer {
+
+}
+
+.cntPeople {
+  font-size: 10px;
+}
+
+
+/* chatting info */
+.chat-room-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 40px;
+}
+.accordion {
+  width: 100%;
+  margin-top: 10px;
+}
+.accordion-item {
+  border: none;
+  background-color: transparent;
+}
+.accordion-button {
+  background-color: transparent !important;
+  font-weight: 700;
+  color: #484848;
+}
+.accordion-button:not(.collapsed) {
+  color:  #484848;
+  border-color: transparent;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0);
+}
+.accordion-button:not(.collapsed)::after {
+  color:  #484848;
+  background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23212529%27%3e%3cpath fill-rule=%27evenodd%27 d=%27M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e');
+}
+.accordion-button:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 0.25rem rgba(13, 109, 253, 0);
+  background-color: transparent;
+}
+.accordion-button::after {
+  border-color: transparent;
+  box-shadow: 0 0 0 0.25rem rgba(13, 109, 253, 0);
+  background-color: transparent;
+}
+.accordion-button {
+  color: #212529;
+  font-size: 19px !important;
+  background-color: transparent;
+  padding: 16px 0;
+  border-color: transparent;
+}
+/* contents */
+.accordion-body {
+  padding: 0;
+  font-size: 16px;
+  color: #7a7a7a;
+  text-align: left;
+}
+/*  작성자  */
+.chat-room-writer-profileImg {
+  width: 40px;
+  height: 40px;
+
+}
+
+.chat-room-writer-fld {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.chat-room-writer-nickname {
+  font-size: 18px;
+  color: #484848;
+  margin-left: 10px;
+}
+.chatting-input-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #e8e5de;
+  border-radius: 15px 15px 0px 0px;
+  box-shadow: 1px 0px 15px #c4c4c4;
+  margin: 0 !important;
+  height: 10vh;
+}
+
+/* 유튜브 상자 */
+.youtube-box {
+  width: 100vw;
+  height: 56.3vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5vh;
+}
+
+/* 채팅 보드 */
+.chat-board {
+  width: 100vw;
+  position: absolute;
+  bottom: 100px;
+  max-height: 443px;
+  overflow: scroll;
+}
+.chat-board-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 5vw 10px 5vw;
+  word-break: break-all;
+}
+.chat-board-message-container {
+  text-align: start;
+  display: flex;
+  align-items: baseline;
+}
+.chat-board-message {
+  display: inline-flex;
+  flex-direction: column;
+  color: #484848;
+  padding: 10px 15px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.119);
+}
+.chat-board-other {
+  background-color: #e8e5de;
+  border-radius: 0 13px 13px 13px;
+}
+.chat-board-me {
+  background-color: #f6e8c6;
+  border-radius: 13px 0 13px 13px;
+}
+.chat-board-avatar {
+  z-index: -1;
+  margin: 5px;
+}
+.chat-board-message-writer {
+  font-size: 15px;
+}
+.chat-board-message-contents {
+  color: #484848;
+  font-size: 13px;
+}
+
+/* 댓글 */
+.chatting-comment-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 25px auto;
+}
+
+.chatting-input-box {
+  font-size: 15px;
+  height: 5vh;
+  width: 70%;
+  border-radius: 10px;
+  border-color: transparent;
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #212529;
+
+}
+
+.chatting-submit-btn {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: #7a7a7a;
+  padding: 4px 0px 0px 0px !important;
+  margin-right: 2px;
+}
+
+.chatting-submit-btn:hover {
+  color: #f8ab0b;
+}
+
+/* Medium devices (desktops, 992px and up) */
+/* @media (min-width: @screen-md-min) { } */

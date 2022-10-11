@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.web.curation.model.mapper.ProfileDataMapper">
+	<select id="getFeedCnt" parameterType="integer" resultType="integer">
+		select count(*)
+		from feed
+		where user_id = #{userId}
+	</select>
+	
+	<select id="getFollowerCnt" parameterType="integer" resultType="integer">
+		select count(*)
+		from follow
+		where to_user_id = #{toUserId}
+	</select>
+	
+	<select id="getFollowingCnt" parameterType="integer" resultType="integer">
+		select count(*)
+		from follow
+		where from_user_id = #{fromUserId}
+	</select>
+	
+	<select id="getLikeSum" parameterType="integer" resultType="integer">
+		select count(*)
+		from feed f
+		right join feed_like fl
+		on f.feed_id = fl.feed_id
+		where f.user_id = #{userId}
+	</select>
+	
+	<select id="getUserId" parameterType="String" resultType="integer">
+		select user_id
+		from user
+		where email = #{email}
+	</select>
+	
+	<select id="getCategoryList" resultType="String">
+		select category 
+		from feed 
+		group by category
+	</select>
+	
+	<select id="getFeedList" parameterType="integer" resultType="FeedList">
+		select f.feed_id, 
+			(select file_url from file_info where feed_id = f.feed_id order by file_id asc limit 1) as url
+		from feed f
+		where user_id = #{userId};
+	</select>
+	
+	<select id="getLikeFeedList" parameterType="integer" resultType="FeedList">
+		select f.feed_id, 
+			(select file_url from file_info where feed_id = f.feed_id order by file_id asc limit 1) as url
+		from feed_like as fl
+		right join feed as f
+		on f.feed_id = fl.feed_id
+		where fl.user_id = #{userId}
+		order by f.feed_id
+	</select>
+	
+	<update id="updateProfile" parameterType="ProfileChangeRequest">
+		update user 
+		   set nickname = #{nickname}, 
+		   	   bio = #{bio}
+		 where email = #{email}
+	</update>
+	
+	<insert id="profileFile" parameterType="ProfileChangeRequest">
+		insert into file_profile(user_id, file_url, file_name)
+		select user_id, #{url}, #{fileName}
+        from user
+        where email = #{email};
+	</insert>
+	
+	<delete id="deleteProfile" parameterType="String">
+		delete
+		from file_profile 
+		where user_id = 
+			(select user_id from user where email = #{email})
+	</delete>
+	
+	<select id="getFileName" parameterType="String" resultType="String">
+	 	select file_name
+	 	from file_profile
+	 	where user_id = 
+	 		(select user_id from user where email = #{email})
+	</select>
+	
+	<delete id="deleteFile" parameterType="String">
+		delete
+		from file_profile 
+		where user_id = 
+			(select user_id from user where email = #{email})
+	</delete>
+	
+</mapper>

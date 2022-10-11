@@ -1,0 +1,68 @@
+.alarm {
+  margin: 30px;
+}
+
+#alarm-card{
+  position: relative;
+  margin: auto;
+  max-width: 500px;
+  transition: transform 300ms ease;
+}
+#alarm-card:hover{
+  transform: scale(1.1);
+}
+
+#alarm-content{
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  left:30px;
+  top:20px;
+  cursor: pointer;
+  width: 90%;
+}
+
+#alarm-content-text{
+  margin: auto 10px;
+  text-align: left;
+}
+.alarm-nickname {
+font-weight: 700;
+}
+.alarm-nickname:hover {
+  color: #EEC777;
+}
+#alarm-icon{
+  color: #EEC777;
+}
+
+.alarm-card-feedLike {
+  border-color: #8da696 !important;
+}
+
+.alarm-card-follow {
+  border-color: #75AABF !important;
+}
+
+.alarm-card-comment {
+  border-color: #E9B7AA !important;
+}
+
+.alarm-card-commentLike {
+  border-color: #F2E4BB !important;
+}
+
+
+#alarm-time{
+  font-size: small;
+  margin: auto 7% 4px auto;
+  color: #F8AB0B;
+}
+
+#false-time-icon{
+  margin-left: auto;
+  margin-right: 7%;
+  margin-top: 1%;
+  color: #F8AB0B;
+  font-size: small;
+}

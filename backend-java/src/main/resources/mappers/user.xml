@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.web.curation.model.mapper.UserMapper">
+
+	<select id="login" parameterType="User" resultType="User">
+		select *,
+			(select file_url from file_profile where user_id = u.user_id) as profile_url
+		from user u
+		where email = #{email} and password = #{password}
+	</select>
+	
+	<select id="userInfo" parameterType="integer" resultType="User">
+		select user_id, nickname, bio, sign_up_date,
+			(select file_url from file_profile where user_id = u.user_id) as profile_url
+		from user u
+		where user_id = #{userId}
+	</select>
+	
+	<insert id="signup" parameterType="User">
+		insert into user(
+			email, password, sign_up_date, nickname
+		) values (
+			#{email}, #{password}, #{signUpDate}, #{nickname} 
+		)
+	</insert>
+
+	<delete id="deleteFeedFile" parameterType="integer">
+		delete 
+		  from file_info 
+		 where feed_id in 
+			(select feed_id from feed where user_id = #{userId})
+	</delete>
+	
+	<delete id="deleteFeed" parameterType="integer">
+		delete 
+		  from feed 
+		 where user_id = #{userId}
+	</delete>
+	
+	<delete id="deleteProfileFile" parameterType="integer">
+		delete 
+		  from file_profile
+		 where user_id = #{userId}
+	</delete>
+
+	<delete id="deleteUser" parameterType="integer">
+		delete 
+		  from user 
+		 where user_id = #{userId}
+	</delete>
+	
+	<select id="getFileNames" parameterType="int" resultType="String">
+		select file_name
+		from file_info
+		where feed_id in 
+			(select feed_id from feed where user_id = #{userId})
+		union
+		select file_name
+		from file_profile
+		where user_id = #{userId};
+	</select>
+	
+	<select id="countEmail" parameterType="String" resultType="Int">
+		select count(email) 
+		from user
+		where email = #{email}
+	</select>
+	
+	<select id="countNickname" parameterType="String" resultType="Int">
+		select count(nickname) 
+		from user 
+		where nickname = #{nickname}
+	</select>
+	
+	<select id="countEmailAndPass" parameterType="User" resultType="Int">
+		select count(email) 
+		from user
+		where email = #{email} and password = #{password}
+	</select>
+	
+	<update id="updatePass" parameterType="User">
+		update user 
+		   set password = #{password} 
+		 where email = #{email}
+	</update>
+	
+	<select id="getAlertList" parameterType="integer" resultType="Alert">
+		select *,
+			(select file_url from file_profile where user_id = a.sender_id) as profile_url
+		from alert a
+		where target_id = #{targetId}
+	</select>
+	
+	<update id="updateAlertChecked" parameterType="integer">
+		update alert 
+		   set checked = 1
+		 where target_id = #{targetId}
+	</update>
+	
+</mapper>

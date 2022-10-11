@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-youtube": "^7.14.0",
+    "youtube-api-search": "^0.0.5"
+  }
+}
